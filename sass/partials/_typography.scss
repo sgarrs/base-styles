@@ -1,0 +1,14 @@
+$ms-base: 16px;
+$ms-ratio: $golden;
+$ms-range:
+  1.1   20em,
+  1.333 60em;
+
+html { @include rem-baseline; }
+
+h1 {
+  @include rem(font-size, ms());
+}
+p {
+  @include ms-respond(font-size, 2);
+}
