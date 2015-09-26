@@ -1,14 +1,20 @@
+// Set a base font-size and select your scale
+// https://github.com/modularscale/modularscale-scss
 $ms-base: 16px;
-$ms-ratio: $golden;
-$ms-range:
-  1.1   20em,
-  1.333 60em;
+$ms-ratio: $major-third;
 
-html { @include rem-baseline; }
+html {
+  font-size: 100%; // alistapart.com/article/howtosizetextincss
+}
 
-h1 {
-  @include rem(font-size, ms());
-}
-p {
-  @include ms-respond(font-size, 2);
-}
+// Set element styles to increase accessibility.
+// These styles should probably be set in inline HTML, since the main purpose
+// is to provide basic styles when a stylesheet can't load. Although BEM naming
+// will be used here, semantic elements still need to be used for assistive
+// devices. Also, base styles around modular scale steps.
+
+h1 { @include rem(font-size, ms(4)); }
+h2 { @include rem(font-size, ms(3)); }
+h3 { @include rem(font-size, ms(2)); }
+h4 { @include rem(font-size, ms(1)); }
+

@@ -1,4 +1,7 @@
-/* REM CONVERTER */
+// IMPORTS
+@import 'modular-scale';
+
+// REM CONVERTER
 $rem-baseline: 10px !default;
 $rem-fallback: true !default;
 $rem-px-only: false !default;
@@ -64,5 +67,3 @@ $rem-px-only: false !default;
     }
   }
 }
-
-@import 'modular-scale';
