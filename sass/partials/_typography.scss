@@ -1,20 +1,40 @@
+// VARIABLES// {{{
 // Set a base font-size and select your scale
 // https://github.com/modularscale/modularscale-scss
-$ms-base: 16px;
-$ms-ratio: $major-third;
+
+// This mixin rounds pixel values to nearest integer. I'm undecided as to
+// whether this is a good thing or not. On one hand, this provides some control
+// over browsers that don't render subpixels, assuming modular-scale rounds
+// to satisfactory values. On the other hand, this takes away accuracy in
+// browsers that do render subpixels. Why would you willingly stray (however
+// slightly) from your ratio by rounding? Or is this so small that the eye
+// does not perceive this?
+$ms-base: 18px;
+$ms-ratio: $major-second;
+$ms-range:
+  1   300px,
+  1.3  1500px;
+// }}}
+// HELPER CLASSES// {{{
+
+// Sizing
+%h1         { @include ms-respond(font-size, 5); line-height: 1;   letter-spacing: -1.5px; }
+%h2         { @include ms-respond(font-size, 4); line-height: 1.1; letter-spacing: -1px; }
+%h3         { @include ms-respond(font-size, 3); line-height: 1.4; }
+%h4         { @include ms-respond(font-size, 2); line-height: 1.4; }
+%body__text { @include ms-respond(font-size, 1); line-height: 1.4; }
+
+// Styling
+%em         { font-style: italic; }
+%uppercase  { text-transform: uppercase; letter-spacing: 2px; }
+
+// Alignment
+%indent     { @include ms-respond(text-indent, 3); }
+%center { text-align: center; }
+
+// }}}
 
 html {
-  font-size: 100%; // alistapart.com/article/howtosizetextincss
+  @include rem-baseline; // alistapart.com/article/howtosizetextincss
+  line-height: 1.4;
 }
-
-// Set element styles to increase accessibility.
-// These styles should probably be set in inline HTML, since the main purpose
-// is to provide basic styles when a stylesheet can't load. Although BEM naming
-// will be used here, semantic elements still need to be used for assistive
-// devices. Also, base styles around modular scale steps.
-
-h1 { @include rem(font-size, ms(4)); }
-h2 { @include rem(font-size, ms(3)); }
-h3 { @include rem(font-size, ms(2)); }
-h4 { @include rem(font-size, ms(1)); }
-
