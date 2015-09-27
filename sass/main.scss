@@ -1,1 +1,10 @@
 @import 'partials/base';
+@import 'partials/modules/book';
+@import 'partials/modules/chapter';
+
+.container {
+  @include ms-respond(padding, 1);
+  max-width: 900px;
+  min-width: 300px;
+  margin: 0 auto;
+}
