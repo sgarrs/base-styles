@@ -1,0 +1,27 @@
+.chapter__title {
+  @extend %h2;
+  @extend %page-align;
+  margin: 0 auto ms(5) auto;
+}
+.chapter__subheading {
+  @extend %h4;
+  @extend %uppercase;
+  margin: 0 auto;
+  @extend %page-align;
+ }
+.chapter__paragraph {
+  @extend %body__text;
+  @extend %page-align;
+  margin: 0 auto;
+  @extend %indent;
+}
+.chapter__list {
+  @extend %body__text;
+  min-width: 200px;
+  max-width: 600px;
+  margin: ms(-5) auto ms(-5) auto;
+  & li:last-child {
+    border-top: 1px solid #000;
+  }
+}
+

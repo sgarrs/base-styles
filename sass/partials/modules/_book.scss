@@ -1,0 +1,12 @@
+.heading {
+  margin-bottom: ms(5);
+}
+.heading__title {
+  @extend %h1;
+  @extend %center;
+}
+.heading__author {
+  @extend %h3;
+  @extend %em;
+  @extend %center;
+}
