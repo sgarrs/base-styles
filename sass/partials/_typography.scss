@@ -17,24 +17,57 @@ $ms-range:
 // }}}
 // HELPER CLASSES// {{{
 
+// Fonts
+%body-serif { font-family:  Georgia, serif; }
+%sans { font-family: Helvetica Neue, Verdana, sans-serif; }
+%title-serif { font-family: Baskerville; }
+
 // Sizing
-%h1         { @include ms-respond(font-size, 5); line-height: 1;   letter-spacing: -1.5px; }
-%h2         { @include ms-respond(font-size, 4); line-height: 1.1; letter-spacing: -1px; }
-%h3         { @include ms-respond(font-size, 3); line-height: 1.4; }
-%h4         { @include ms-respond(font-size, 2); line-height: 1.4; }
-%body__text { @include ms-respond(font-size, 1); line-height: 1.4; }
+%h1 {
+  @include ms-respond(font-size, 5);
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+%h2 {
+  @include ms-respond(font-size, 4);
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+%h3 {
+  @include ms-respond(font-size, 3);
+  line-height: 1.4;
+}
+%h4 {
+  @include ms-respond(font-size, 2);
+  line-height: 1.4;
+}
+%body__text {
+  @include ms-respond(font-size, 1);
+  line-height: 1.4;
+}
 
 // Styling
 %em         { font-style: italic; }
-%uppercase  { text-transform: uppercase; letter-spacing: 2px; }
+%uppercase  {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-font-feature-settings: 'tnum';
+}
 
 // Alignment
 %indent     { @include ms-respond(text-indent, 3); }
 %center { text-align: center; }
 
+// Word Groups
+@import 'compass/css3';
+%hyphenate {
+  @include word-break(break-all);
+  @include hyphens(auto);
+  @include hyphenation;
+}
 // }}}
-
 html {
   @include rem-baseline; // alistapart.com/article/howtosizetextincss
   line-height: 1.4;
+  @extend %body-serif;
 }
