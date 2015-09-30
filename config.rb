@@ -10,7 +10,7 @@ images_dir = "images"
 javascripts_dir = "javascripts"
 
 # You can select your preferred output style here (can be overridden via the command line):
-output_style = :nested # :compact :expanded or  or  or :compressed
+output_style = :compressed # :nested :compact :expanded :compressed
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 # relative_assets = true
