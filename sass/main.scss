@@ -3,8 +3,12 @@
 @import 'partials/modules/chapter';
 
 .container {
-  @include ms-respond(padding, 1);
-  max-width: 900px;
+  @include ms-respond(padding, 4);
+  max-width: 750px;
   min-width: 300px;
   margin: 0 auto;
+}
+body {
+  background: #EBEBEB;
+  color: #333;
 }

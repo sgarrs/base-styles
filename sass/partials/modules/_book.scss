@@ -4,9 +4,17 @@
 .heading__title {
   @extend %h1;
   @extend %center;
+  @extend %title-serif;
 }
 .heading__author {
   @extend %h3;
   @extend %em;
   @extend %center;
+  @extend %title-serif;
 }
+@media screen and (max-width: 720px) {
+  .heading__title, .heading__author {
+    font-family: Georgia;
+  }
+}
+
