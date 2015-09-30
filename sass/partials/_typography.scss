@@ -18,9 +18,16 @@ $ms-range:
 // HELPER CLASSES// {{{
 
 // Fonts
-%body-serif { font-family:  Georgia, serif; }
+
+%body-serif { // Use a sturdier typeface, with less contrast and more hinting
+  font-family:  Georgia, serif;
+}
 %sans { font-family: Helvetica Neue, Verdana, sans-serif; }
-%title-serif { font-family: Baskerville; }
+%title-serif { // Use a typeface with more contrast for display text
+               // Make sure letterspacing from helper classes don't conflict
+               // with the typeface.
+font-family: Baskerville;
+}
 
 // Sizing
 %h1 {
@@ -41,8 +48,12 @@ $ms-range:
   @include ms-respond(font-size, 2);
   line-height: 1.4;
 }
-%body__text {
+%body__text--serif {
   @include ms-respond(font-size, 1);
+  line-height: 1.4;
+}
+%body__text--sans {
+  @include ms-respond(font-size, 0.8); // Serif and sans-serif typefaces need to match in x-height.
   line-height: 1.4;
 }
 
@@ -70,4 +81,5 @@ html {
   @include rem-baseline; // alistapart.com/article/howtosizetextincss
   line-height: 1.4;
   @extend %body-serif;
+  color: #333;
 }
