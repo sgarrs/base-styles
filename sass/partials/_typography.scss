@@ -22,7 +22,19 @@ $ms-range:
 %body-serif { // Use a sturdier typeface, with less contrast and more hinting
   font-family:  Georgia, serif;
 }
+// Higher resolution screens tend to make type look too thick at regular weights.
+// Choose a lighter weight, or choose a different font with slightly more contrast.
+/* @media screen and (min-resolution: 180dpi) {
+	%body-serif {
+		font-family: 'Hoefler Text';
+	}
+} */
 %sans { font-family: Helvetica Neue, Verdana, sans-serif; }
+/* @media screen and (min-resolution: 180dpi) {
+	%sans {
+		font-family: 'Avenir Next';
+	}
+} */
 %title-serif { // Use a typeface with more contrast for display text
                // Make sure letterspacing from helper classes don't conflict
                // with the typeface.
@@ -81,5 +93,5 @@ html {
   @include rem-baseline; // alistapart.com/article/howtosizetextincss
   line-height: 1.4;
   @extend %body-serif;
-  color: #333;
+  color: $black;
 }

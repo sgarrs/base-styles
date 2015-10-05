@@ -4,11 +4,16 @@
 
 .container {
   @include ms-respond(padding, 4);
-  max-width: 750px;
-  min-width: 300px;
-  margin: 0 auto;
+//  max-width: 750px;
+//  min-width: 300px;
+//  margin: 0 auto;
 }
 body {
-  background: #EBEBEB;
-  color: #333;
+  background: $white;
+  color: $black;
+}
+@media screen and (min-resolution: 180dpi) {
+	body {
+		 color: lighten($black, 20%);
+	}
 }

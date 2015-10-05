@@ -1,0 +1,27 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "colors.css": "^2.3.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.9.7",
+    "gulp": "^3.9.0",
+    "gulp-compass": "^2.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sgarrs/base-styles.git"
+  },
+  "author": "Garrett Sanders",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sgarrs/base-styles/issues"
+  },
+  "homepage": "https://github.com/sgarrs/base-styles"
+}

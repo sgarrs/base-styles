@@ -1,5 +1,29 @@
-%page-align {
-  min-width: 200px;
-  max-width: 750px;
-}
+ @import 'gridle/gridle';
 
+ $settings: (
+ 	context: 12,  				// number of columns in grid
+ 	gutter-width: 0px,  		// size of gutters
+ 	direction: ltr,  			// direction
+ 	name-multiplicator: 1  		// generate names in intervals
+ );
+ @include gridle_setup($settings);
+
+.container {
+ 	@include gridle_container();
+	max-width: 780px;
+	@include gridle_centered();
+	@include gridle_parent();
+ }
+%page-align {
+//  min-width: 200px;
+//  max-width: 750px;
+	@include gridle(12);
+}
+%page-center {
+	@include gridle(10);
+	@include gridle_centered();
+}
+%page-indent {
+  @include gridle(11);
+  @include gridle_push(1);
+}

@@ -22,26 +22,26 @@
 .chapter__list {
   @extend %body__text--sans;
   @extend %sans;
+  @extend %page-center;
   min-width: 200px;
   max-width: 650px;
   margin: ms(-5) auto ms(-5) auto;
   & li:last-child {
-    border-top: 1px solid #000;
+    border-top: 1px solid $black;
     display: inline-block;
   }
 }
 .chapter__section--indented {
   margin-top: ms(1);
-  @include ms-respond(padding-left, 6);
-  float: right;
+  // @include ms-respond(padding-left, 6);
+  // float: right;
+	@extend %page-indent;
   .chapter__paragraph {
     margin-bottom: ms(1);
     text-indent: 0;
     position: relative;
   }
-  .chapter__paragraph--dialog:before {
-    content: '“';
-    position: absolute;
-    left: -1.5%;
+  .chapter__paragraph--dialog {
+	text-indent: -0.4em;
   }
 }
